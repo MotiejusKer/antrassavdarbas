@@ -1,0 +1,315 @@
+#pragma once
+
+namespace CppCLRWinFormsProject {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+
+	/// <summary>
+	/// Summary for Form1
+	/// </summary>
+	public ref class Form1 : public System::Windows::Forms::Form
+	{
+	public:
+		Form1(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~Form1()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::Button^ buttonClose;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ buttonOpen;
+	private: System::Windows::Forms::Button^ buttonSave;
+	private: System::Windows::Forms::Button^ buttonSaveAs;
+	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^ fileToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ openToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ saveToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ saveAsToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ closeToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ infoToolStripMenuItem;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+	private: System::Windows::Forms::Button^ buttonGenerate;
+
+	protected:
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->buttonClose = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->buttonOpen = (gcnew System::Windows::Forms::Button());
+			this->buttonSave = (gcnew System::Windows::Forms::Button());
+			this->buttonSaveAs = (gcnew System::Windows::Forms::Button());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->fileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->saveAsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->closeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->infoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->buttonGenerate = (gcnew System::Windows::Forms::Button());
+			this->menuStrip1->SuspendLayout();
+			this->SuspendLayout();
+			// 
+			// buttonClose
+			// 
+			this->buttonClose->Location = System::Drawing::Point(681, 397);
+			this->buttonClose->Name = L"buttonClose";
+			this->buttonClose->Size = System::Drawing::Size(75, 23);
+			this->buttonClose->TabIndex = 0;
+			this->buttonClose->Text = L"Close";
+			this->buttonClose->UseVisualStyleBackColor = true;
+			this->buttonClose->Click += gcnew System::EventHandler(this, &Form1::buttonClose_Click);
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(20, 39);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(637, 380);
+			this->textBox1->TabIndex = 1;
+			// 
+			// buttonOpen
+			// 
+			this->buttonOpen->Location = System::Drawing::Point(681, 39);
+			this->buttonOpen->Name = L"buttonOpen";
+			this->buttonOpen->Size = System::Drawing::Size(75, 23);
+			this->buttonOpen->TabIndex = 2;
+			this->buttonOpen->Text = L"Open";
+			this->buttonOpen->UseVisualStyleBackColor = true;
+			this->buttonOpen->Click += gcnew System::EventHandler(this, &Form1::buttonOpen_Click);
+			// 
+			// buttonSave
+			// 
+			this->buttonSave->Location = System::Drawing::Point(681, 68);
+			this->buttonSave->Name = L"buttonSave";
+			this->buttonSave->Size = System::Drawing::Size(75, 23);
+			this->buttonSave->TabIndex = 3;
+			this->buttonSave->Text = L"Save";
+			this->buttonSave->UseVisualStyleBackColor = true;
+			this->buttonSave->Click += gcnew System::EventHandler(this, &Form1::buttonSave_Click);
+			// 
+			// buttonSaveAs
+			// 
+			this->buttonSaveAs->Location = System::Drawing::Point(681, 97);
+			this->buttonSaveAs->Name = L"buttonSaveAs";
+			this->buttonSaveAs->Size = System::Drawing::Size(75, 23);
+			this->buttonSaveAs->TabIndex = 4;
+			this->buttonSaveAs->Text = L"Save As...";
+			this->buttonSaveAs->UseVisualStyleBackColor = true;
+			this->buttonSaveAs->Click += gcnew System::EventHandler(this, &Form1::buttonSaveAs_Click);
+			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->fileToolStripMenuItem,
+					this->infoToolStripMenuItem
+			});
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(778, 24);
+			this->menuStrip1->TabIndex = 5;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// fileToolStripMenuItem
+			// 
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->openToolStripMenuItem,
+					this->saveToolStripMenuItem, this->saveAsToolStripMenuItem, this->closeToolStripMenuItem
+			});
+			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
+			this->fileToolStripMenuItem->Text = L"File";
+			// 
+			// openToolStripMenuItem
+			// 
+			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
+			this->openToolStripMenuItem->Size = System::Drawing::Size(123, 22);
+			this->openToolStripMenuItem->Text = L"Open";
+			this->openToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::openToolStripMenuItem_Click);
+			// 
+			// saveToolStripMenuItem
+			// 
+			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(123, 22);
+			this->saveToolStripMenuItem->Text = L"Save";
+			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveToolStripMenuItem_Click);
+			// 
+			// saveAsToolStripMenuItem
+			// 
+			this->saveAsToolStripMenuItem->Name = L"saveAsToolStripMenuItem";
+			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(123, 22);
+			this->saveAsToolStripMenuItem->Text = L"Save As...";
+			this->saveAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveAsToolStripMenuItem_Click);
+			// 
+			// closeToolStripMenuItem
+			// 
+			this->closeToolStripMenuItem->Name = L"closeToolStripMenuItem";
+			this->closeToolStripMenuItem->Size = System::Drawing::Size(123, 22);
+			this->closeToolStripMenuItem->Text = L"Close";
+			this->closeToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::closeToolStripMenuItem_Click);
+			// 
+			// infoToolStripMenuItem
+			// 
+			this->infoToolStripMenuItem->Name = L"infoToolStripMenuItem";
+			this->infoToolStripMenuItem->Size = System::Drawing::Size(40, 20);
+			this->infoToolStripMenuItem->Text = L"Info";
+			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->FileName = L"openFileDialog1";
+			// 
+			// buttonGenerate
+			// 
+			this->buttonGenerate->Location = System::Drawing::Point(681, 126);
+			this->buttonGenerate->Name = L"buttonGenerate";
+			this->buttonGenerate->Size = System::Drawing::Size(75, 23);
+			this->buttonGenerate->TabIndex = 6;
+			this->buttonGenerate->Text = L"Generate";
+			this->buttonGenerate->UseVisualStyleBackColor = true;
+			this->buttonGenerate->Click += gcnew System::EventHandler(this, &Form1::buttonGenerate_Click);
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(778, 463);
+			this->Controls->Add(this->buttonGenerate);
+			this->Controls->Add(this->buttonSaveAs);
+			this->Controls->Add(this->buttonSave);
+			this->Controls->Add(this->buttonOpen);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->buttonClose);
+			this->Controls->Add(this->menuStrip1);
+			this->MainMenuStrip = this->menuStrip1;
+			this->Name = L"Form1";
+			this->Text = L"Studentu duomenys";
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+	private: System::Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e) {
+		Form1::Close();
+	}
+
+	private: String^ File_Name = L"";
+
+	private: System::Void buttonOpen_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			System::IO::StreamReader ^ Fileread = gcnew System::IO::StreamReader(openFileDialog1->FileName);
+			textBox1->Text = Fileread->ReadToEnd();
+			Fileread->Close();
+			File_Name = openFileDialog1->FileName;
+			Form1::Text = L"Studentu duomenys | " + openFileDialog1->FileName;
+		}
+	}
+	private: System::Void buttonSave_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ tekstas;
+		if (textBox1->Text == " ") tekstas = L" ";
+		tekstas = textBox1->Text;
+		if (File_Name != " ") {
+			System::IO::StreamWriter^ FW = gcnew System::IO::StreamWriter(File_Name);
+			FW->Write(tekstas);
+			FW->Close();
+			MessageBox::Show(L"Failas sėkmingai įrašytas", "Informacija", MessageBoxButtons::OK);
+		}
+		else MessageBox::Show(L"Failas nerastas", "Klaida!!!", MessageBoxButtons::OK);
+}
+	private: System::Void buttonSaveAs_Click(System::Object^ sender, System::EventArgs^ e) {
+		SaveFileDialog^ SaveFileDialog1 = gcnew SaveFileDialog();
+		String^ tekstas;
+		tekstas = textBox1->Text;
+		if (SaveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			System::IO::StreamWriter^ FW = gcnew System::IO::StreamWriter(SaveFileDialog1->FileName);
+			FW->Write(tekstas);
+			FW->Close();
+			MessageBox::Show(L"Failas sėkmingai sukurtas", "Informacija", MessageBoxButtons::OK);
+		}
+			else MessageBox::Show(L"Klaida įrašant failą", "Klaida!!!", MessageBoxButtons::OK);
+}
+	private: System::Void openToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		buttonOpen_Click(sender, e);
+}
+	private: System::Void saveToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		buttonSave_Click(sender, e);
+}
+	private: System::Void saveAsToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		buttonSaveAs_Click(sender, e);
+}
+	private: System::Void closeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		buttonClose_Click(sender, e);
+}
+private: System::Void buttonGenerate_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox1->Clear(); // Išvalome tekstą prieš generuodami naujus rezultatus.
+	textBox1->Multiline = true; // Užtikriname, kad tekstas bus rodomas daugelyje eilučių.
+
+	System::Random^ random = gcnew System::Random();
+	int numStudents = 10;  // Studentų kiekis
+
+	for (int j = 1; j <= numStudents; ++j) {
+		// Sukuriame pažymių sąrašą.
+		System::Collections::Generic::List<int>^ grades = gcnew System::Collections::Generic::List<int>();
+		for (int i = 0; i < 8; ++i) {
+			grades->Add(random->Next(0, 11));  // Generuojame pažymius nuo 0 iki 10
+		}
+		int examGrade = random->Next(0, 11);  // Atsitiktinis egzamino pažymys nuo 0 iki 10
+
+		// Apskaičiuojame pažymių vidurkį rankiniu būdu.
+		double gradesSum = 0.0;
+		for each (int grade in grades) {
+			gradesSum += grade;
+		}
+		double gradesAvg = gradesSum / grades->Count; // Pažymių vidurkis
+		double finalAvg = 0.4 * gradesAvg + 0.6 * examGrade;  // Galutinis vidurkis
+
+		// Formuojame studentų rezultatus kaip tekstą.
+		System::Text::StringBuilder^ studentResult = gcnew System::Text::StringBuilder();
+		studentResult->Append("Vardas" + j + " Pavarde" + j + " ");
+		for each (int grade in grades) {
+			studentResult->Append(grade + " ");
+		}
+		studentResult->Append(examGrade + " " + finalAvg.ToString("F2"));
+		studentResult->Append(finalAvg > 5 ? " Galvocius" : " Nuskriaustukas");
+		studentResult->Append("\n"); // Naujos eilutės simbolis
+
+		// Pridedame rezultatą prie `textBox1`.
+		textBox1->AppendText(studentResult->ToString());
+	}
+}
+};
+}
